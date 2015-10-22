@@ -1,0 +1,19 @@
+/*
+ Theme Name:   programma
+ Theme URI:    https://github.com/Maureen-Hernandez/BurguerBar
+ Description:  Child Theme for Local Rest
+ Author:       Maureen Hernandez
+ Author URI:   https://github.com/Maureen-Hernandez/
+ Template:     twentyfifteen
+ Version:      1.0.0
+ Tags:         BurguerBar, programma, own theme, child theme
+*/
+
+body:before {
+    width: 0;
+}
+
+.site-content {
+    margin-left: 0;
+    width: 100%;
+}
