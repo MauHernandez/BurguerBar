@@ -42,6 +42,7 @@ get_header(); ?>
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	
 </div>
-<?php mostrar_anclas(10,16); ?>
-
+<div class="container anclas">
+  <?php mostrar_anclas(10,16, ffcc99, 631201); ?>
+</div>
 <?php get_footer(); ?>
