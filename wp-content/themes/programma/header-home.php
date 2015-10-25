@@ -17,7 +17,7 @@
 	foreach ($loop as $slide) { ?>
 		<div class="item <?php  if ($i == 0){ echo 'active'; } ?>">
 	      <img src="<?php echo $slide['slider_img'] ?>" alt="...">
-	      <div class="carousel-caption">
+	      <div class="carousel-caption carousel-home-caption">
 	        <?php echo $slide['slider_des'] ?>
 	      </div>
 	    </div>

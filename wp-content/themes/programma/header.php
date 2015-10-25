@@ -29,8 +29,8 @@
 			}else{
 				$bg = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()));
 				?>
-			<div class="container" style="background: url(<?php echo $bg ?>)">
-				<h1><?php echo get_the_title(get_the_ID); ?></h1>
+			<div class="container page-cover" style="background: url(<?php echo $bg ?>)">
+				<h1 class="centerv"><?php echo get_the_title(get_the_ID()); ?></h1>
 			</div>
 			<?php }
 		 ?>

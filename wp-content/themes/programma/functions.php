@@ -16,31 +16,37 @@ function remove_admin_bar() {
 }
 add_action('after_setup_theme', 'remove_admin_bar');
 
-function mostrar_anclas($id1 , $id2){ ?>
-<div class="container ancla">
-	<?php $url1 = wp_get_attachment_url( get_post_thumbnail_id($id1) ); ?>
-	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="background: url(<?php echo $url1 ?>)">
-		<p><?php echo get_the_title($id1); ?></p>
+function mostrar_anclas($id1 , $id2, $color1, $color2){ ?>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 wrapper-anclas">
+		<?php $url1 = wp_get_attachment_url( get_post_thumbnail_id($id1) ); ?>
+		<a href="<?php echo get_permalink($id1); ?>">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ancla" style="background: url(<?php echo $url1 ?>)">
+			<p><?php echo get_the_title($id1); ?></p>
+			<div class="bg" style="background-color:#<?php echo $color1 ?>"></div>
+		</div>
+		</a>
+		<?php $url2 = wp_get_attachment_url( get_post_thumbnail_id($id2) ); ?>
+		<a href="<?php echo get_permalink($id2); ?>">
+		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ancla" style="background: url(<?php echo $url2 ?>)">
+			<p><?php echo get_the_title($id2); ?></p>
+			<div class="bg" style="background-color:#<?php echo $color2 ?>"></div>
+		</div>
+		</a>
 	</div>
-	<?php $url2 = wp_get_attachment_url( get_post_thumbnail_id($id2) ); ?>
-	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="background: url(<?php echo $url2 ?>)">
-		<p><?php echo get_the_title($id2); ?></p>
-	</div>
-</div>
 <?php } 
 
 function programma_menu(){ ?>
-	<nav class="navbar navbar-default">
+	<nav class="navbar-fixed-top navbar navbar-default">
         <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#programma_collapse">
-              <span class="sr-only">Toggle navigation</span>
+              <span class="sr-only"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Brand</a>
+            <a class="navbar-brand" href="<?php echo get_permalink(2); ?>"><img src="<?php echo get_stylesheet_directory_uri()?>/images/logo_menu.png" alt="BurguerBar"></a>
           </div>
         
       <?php 
@@ -49,10 +55,34 @@ function programma_menu(){ ?>
       ?>
       </div>
     </nav>
-<?php }
+	<?php 
+	if (is_front_page()) { ?>
+		<script>
+			jQuery(document).ready(function($){
+				var startY = $('header').position().top + $('header').outerHeight();
+				
+				$(window).scroll(function(){
+				    checkY();
+				});
+				
+				function checkY(){
+				    if( $(window).scrollTop() > startY ){
+				        $('.navbar-fixed-top').slideDown();
+				    }else{
+				        $('.navbar-fixed-top').slideUp();
+				    }
+				}
+				
+				// Do this on load just in case the user starts half way down the page
+				checkY();
+			});
+
+		</script>
+	<?php }
+}
 
 function essential($id){ ?>
-	<div class="container">
+	<div class="container about">
 		<?php 
 			$post = get_page($id);
 			$content = apply_filters('the_content', $post->post_content);
@@ -98,18 +128,19 @@ function programma_slider($name){ ?>
 		      	<?php 
 
 		      	if (!empty($slide['slider_tit'])) {
-		      		echo $slide['slider_tit'];
+		      		echo '<h3>'.$slide['slider_tit'].'</h3>';
 		      	}
 
 		      	if (!empty($slide['slider_des'])) {
-		      		echo $slide['slider_des']; 
-		      	} 
+		      		echo '<p>'.$slide['slider_des'].'</p>'; 
+		      	}
 
+		      	if (!empty($slide['slider_date']) ){
+				       	echo '<p>'.$slide['slider_date'].'</p>';
+			       } 
 		      	?>
 		      </div>
-			       <?php if (!empty($slide['slider_date']) ){
-				       	echo $slide['slider_date'];
-			       }?>
+			       
 		    </div>
 		<?php 
 		$i = 1; 
@@ -117,5 +148,4 @@ function programma_slider($name){ ?>
 	  </div>
 	</div>
 <?php }
-
 ?>
