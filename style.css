@@ -1,0 +1,579 @@
+/*
+ Theme Name:   programma
+ Theme URI:    https://github.com/Maureen-Hernandez/BurguerBar
+ Description:  Child Theme for Local Rest
+ Author:       Maureen Hernandez
+ Author URI:   https://github.com/Maureen-Hernandez/
+ Template:     twentyfifteen
+ Version:      1.0.0
+ Tags:         BurguerBar, programma, own theme, child theme
+*/
+
+/*FONTS*/
+    @font-face {
+        font-family: "Alite Hass";
+        src: url(../programma/static/fonts/altehaasgroteskbold.svg) format("svg");
+        src: url(../programma/static/fonts/altehaasgroteskbold.ttf) format("truetype");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+
+    @font-face {
+		font-family: "MarcelleScript";
+		src: url(../programma/static/fonts/marcsc.eot);
+		src: url(../programma/static/fonts/marcsc.woff) format("woff"),
+		url(../programma/static/fonts/marcsc.ttf) format("truetype"),
+		url(../programma/static/fonts/marcsc.svg) format("svg");
+		font-weight: normal;
+		font-style: normal;
+	}
+
+
+/*********************/
+
+body:before {
+    width: 0;
+}
+
+.page-id-2 header{
+	margin-top: 0;
+}
+
+body header{
+	margin-top: 70px;
+}
+
+.site-content {
+    margin-left: 0;
+    width: 100%;
+}
+
+.site {
+    margin: 0px auto;
+    max-width: 1440px;
+}
+
+.center{
+	margin: 0 auto;
+	float: none;
+}
+
+.centerv,
+.mapa p{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+/* MENU */
+
+	.navbar-brand {
+	    padding: 10px;
+	}
+
+	.navbar-brand > img {
+	    height: 100px;
+	    z-index: 9;
+		position: relative;
+	}
+
+	.navbar-nav {
+	    float: right;
+	}
+	
+	.navbar-nav li{
+		border-bottom: 5px solid transparent;
+	}
+
+	.navbar-nav li:hover{
+		border-bottom: 5px solid #6c0a0a;
+	}
+
+	.navbar-default .container-fluid{
+	    width: 90%;
+	}
+
+	.navbar-default, .site-footer{
+		background:  #3C3C3C url(../programma/images/fondo_menu.png);
+		border-image: url(../programma/images/barra.png) 10 stretch;
+		border-top: 5px solid transparent;
+		border-bottom:0;
+		border-left:0;
+		border-right:0; 
+		border-radius: 0;
+	}
+
+	.navbar-default .navbar-nav > li > a {
+	    color: #ededed;
+	    text-transform: uppercase;
+	    line-height: 2.5;
+	    font-family: "Alite Hass";
+	}
+
+	.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+	    color: white;
+	    background-color: transparent;
+	}
+
+	.navbar{
+		margin-bottom: 0;
+	}
+
+/*SLIDER PRINCIPAL*/
+
+	.page-id-2 .carousel-inner > .item > img,
+	.page-id-2 .carousel-inner > .item {
+		height: 100vh;
+	    width: 100%;
+	}
+
+
+	.carousel-caption {
+	    right: 50%;
+	    left: 5%;
+	    padding-bottom: 50px;
+	    text-align: left;
+	}
+
+	.carousel-home-caption p{
+		font-size: 25px;
+	}
+
+	.carousel-home-caption h3{
+		font-size: 30px;
+	}
+
+	#carousel-header .carousel-indicators {
+	    left: 100%;
+	    width: 20%;
+	}
+
+	.carousel-indicators .active {
+	    width: 10px;
+	    height: 10px;
+	    margin: 5px;
+	    background-color: #FFF;
+	}
+
+	.carousel-indicators li{
+		margin: 5px
+	}
+
+/* ABOUT */
+
+	.about{ 
+	    padding: 50px;
+	    min-height: 60vh;
+        margin-top: 75px;
+	}
+
+	.about button {
+	    float: none;
+	    margin: 50px auto 0px;
+	    position: absolute;
+	    left: 0px;
+	    right: 0px;
+	    background: white;
+	    border: 3px solid #ED6D20;
+	    transition: border 2s ease 0s;
+	    font-size: 15px;
+	    color: #ED6D20;
+	    font-family: "Alite Hass";
+	    text-transform: uppercase;
+	}
+
+	.about button:hover{
+		/*color: white;*/
+		border: solid 3px #631201;
+		background: white !important;
+	}
+
+	.about p{
+		font-family: "MarcelleScript";
+		font-size: 30px;
+	}
+
+/*ANCLAS*/
+
+	.wrapper-anclas{
+		padding: 0;	
+	}
+
+	.anclas{
+	    width: 100%;
+	    padding: 0;
+		height: 40vh;
+	}
+
+	.page-id-2 .anclas {
+	    height: 80vh;
+	}
+
+	.ancla{
+		height: 40vh;
+		padding: 0;
+	}
+
+	.ancla p {
+		font-family: "MarcelleScript";
+		font-size: 50px;
+		color: white;
+		text-align: center;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 9;
+	}
+
+	.bg{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+		top: 0px;
+		opacity: 0.5;
+	}
+
+	.anclas .ancla:hover .bg{
+		display: none;
+	}
+
+/* MAPA */
+
+	.mapa{
+		width: 90%;
+		padding: 70px 15px;
+	}
+
+	.mapa h3,
+	.mapa p{
+		font-family: "MarcelleScript";
+		color: #333333;		
+		margin: 0;
+	}
+
+	.mapa h3{
+		font-size: 60px;
+	}
+
+	.mapa p{
+		float: right;
+		text-align: right;
+		font-size: 20px;
+	}
+	
+	.one{
+		height: 100px;
+		margin-bottom: 30px;
+	}
+
+	.mapa >div .one:nth-child(2){
+		padding: 0;
+		border-left: 10px solid #6c0a0a;
+	}
+
+/* FOOTER */
+
+	.site-footer {
+	    float: left;
+	    margin: 0 !important;
+	    padding: 0px;
+	    width: 100%;
+	}
+
+	footer a{
+		font-family: "Alite Hass";
+		font-size: 15px;
+		color: #EDEDED;
+		line-height: 1.5;
+	}
+	
+	 footer a:hover {
+	    color: #6c0a0a;
+	    text-decoration: none;
+	}
+
+	footer ul{
+		list-style: none;
+	}
+
+	.own-footer > div{
+		padding: 30px;
+	}
+
+	.site-info{
+		text-align: right;
+		color: #EDEDED;
+		padding-right: 100px !important;
+	}
+
+/* ALL PAGES */
+	.page-cover{
+		height: 50vh;
+		text-align: center;
+		width: 100%;
+		background-size: cover !important;
+	}
+
+	.page-cover h1{
+		font-family: "MarcelleScript";
+		font-size: 60px;
+		color: white;
+	}
+
+/* CONTACTO */
+
+	.page-id-16 h2{
+		font-family: "MarcelleScript";
+	}
+	
+	.page-id-16 .container{
+		padding: 40px 15px 80px;
+	}
+
+	form{
+		padding: 30px 50px;
+	}
+
+	label{
+		font-family: "Alite Hass";
+		color: #6c0a0a;
+	}
+
+	.form-control{
+		box-shadow: none;
+	}
+	
+	.page-id-16 p {
+	}
+
+	.page-id-16 .btn-default {
+		color: white;
+		background-color: #6c0a0a;
+		border-color: #6c0a0a;
+		width: 50%;
+		margin: 10px auto;
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+
+/*EVENTOS*/
+
+	
+	.page-id-12 .carousel-inner > .item {
+		height: 60vh;
+	    width: 100%;
+	}
+
+	.page-id-12 .carousel-inner > .item > img{
+		width: 40%;
+		float: right;
+		margin-top: 50px;
+		margin-right: 50px;
+		border: solid 5px;
+	}
+
+	.page-id-12 .carousel-caption{
+		width: 50%;
+		font-family: "MarcelleScript";
+		font-size: 30px;
+		top: 0 !important;
+	}
+
+	.page-id-12 .carousel-caption h3{
+		font-size: 60px;
+	}
+
+	.board, .img{
+		padding: 50px;
+		background: url(../programma/images/pizarron.png);
+		background-size: 100% 70vh;
+		background-repeat: no-repeat;
+		margin-top: 50px;
+		margin-bottom: 100px;
+	}
+
+	.events-list{
+		clear: both;
+	}
+
+	.event{
+		float: left;
+		height: 200px;
+	}
+
+	.event img{
+		width: 40%;
+		float: left;
+	}
+
+	.text{
+		text-align:  center;
+		font-family: "MarcelleScript";
+		font-size: 20px;
+	}
+
+/*MENU*/
+
+	.nav-tabs > li {
+	    float: none;
+	    margin-bottom: -1px;
+	    width: 20%;
+	    display: inline-block;
+	}
+
+	.tab-content{
+		text-align: center;
+	}
+
+	.nav-tabs {
+	    border-bottom: 0;
+	    text-align: center;
+	    margin: 50px;
+	}
+
+	.nav-tabs > li > a {
+	    border: 1px solid transparent;
+	    border-radius: 0;
+	    background-color: #631201;
+	    color: white;
+	    font-family:  "Alite Hass";
+	}
+
+	.nav-tabs > li.active > a:hover,
+	 .nav-tabs > li > a:hover{
+	    color: #555;
+	    background-color: #631201 !important;
+	    opacity: 0.8;
+	    border-width: 1px;
+	    border-style: solid;
+	    border-color: #DDD #DDD transparent;
+	}
+
+	.nav-tabs > li > a {
+	    margin-right: 10px;
+	}
+
+/* GALERÍA */ 
+
+	.galleries {
+	    padding: 50px 0 !important;
+	}
+
+	.gallery a{
+		color: #333333;
+	}
+
+	.gallery a:hover{
+		text-decoration: none;
+	}
+	
+	.gallery{
+		margin-bottom: 5em;
+	}
+
+	.img img{
+		width: 100%;
+		height: 295px;
+	}
+
+	.img {
+	    margin-bottom: 0px;
+	    margin-top: 0px;
+	    padding: 30px;
+	    height: 350px;
+	    background-size: 100% 100%;
+	}
+
+	.gallery h4{
+		font-family: "MarcelleScript";
+		font-size: 40px;
+		color: #631201;
+	}
+
+	.galleries .gallery:nth-child(even) .img{
+		float: right;
+	}
+
+
+	/***************** POP UP *****************************/
+
+	.overlay {
+	    position: fixed;
+	    top: 0px;
+	    bottom: 0px;
+	    left: 0;
+	    right: 0px;
+	    background: rgba(255, 255, 255, 0.95) none repeat scroll 0% 0%;
+	    transition: opacity 500ms ease 0s;
+	    visibility: hidden;
+	    z-index: 30;
+	    height: 100vh;
+	}
+
+	.closing{
+		visibility: hidden !important;
+	}
+	.openning{
+		visibility: visible;
+	}
+
+	.overlay:target {
+	  visibility: visible;
+	  opacity: 1;
+	}
+
+	.popup .content img{
+	  max-height: 70vh;
+	  width: auto;
+	}
+
+
+	.popup {
+	  margin: 70px auto;
+	  padding: 20px;
+	  background: transparent;
+	  border-radius: 5px;
+	  width: 70%;
+	  position: relative;
+	  text-align: center;
+	  /*left: 10%;*/
+	}
+
+	.popup .close {
+	  position: absolute;
+	  top: 20px;
+	  left: 900px;
+	  transition: all 200ms;
+	  font-size: 50px;
+	  font-weight: lighter;
+	  text-decoration: none;
+	  color: #333;
+	  width: 50px;
+	}
+
+	.popup .content {
+	  max-height: 30%;
+	  overflow: auto;
+	  display: inline-block;
+	}
+
+	.popup p{
+		font-size: 18px;
+		font-family: "proximanova-light";
+		padding-top: 15px;
+		margin-bottom: 0;
+	}
+
+	.overlay .carousel {
+	    width: 700px;
+	    height: 525px;
+	    float: none;
+	    margin: 0 auto;
+	}
+
+	.overlay .carousel-inner > .item > img{
+		height: 525px;
+	}
